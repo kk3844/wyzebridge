@@ -40,7 +40,7 @@ Unfortunately you must still pair/unpair the devices through the console.  This 
 1. SSH to your Pi and go to the /home/pi/WyzeSensePy-master directory.
 1. Run sample.py: sudo python sample.py (yes, you must use sudo to access the hidraw device)
 1. When the list of options appears, press P and then Enter.
-1. Press and hold the reset pin on your device until the light turns solid.  You should see it appear in the output on the screen.  Once paired, you'll be sent back to the menu.  You may have to trip the sensor once to see it register.
+1. Press and hold the reset pin on your device until the red light on the sensor flashes.  You should see it appear in the output on the screen as `sensor found`.  Once paired, you'll be sent back to the menu.  You may have to trip the sensor once to see it register.
 1. Add more devices at required.  Once done, press X, then Enter to quit.
 1. Go back to the Wyze Telnet Link device and click the Connect Telnet button and wait for TelnetSession to read Connected.
 1. Once the telnet session is open, click Start Bridge and wait until WyzeHubUSB is Connected.
