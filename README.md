@@ -4,7 +4,7 @@
 
 1. Install Raspbian and make any required setup changes.  This was developed on an original Model B running Raspbian Buster.
 1. Set your PI up with a static IP!  You can use a host name if you'd like, but sticking to IP will keep communications near instant.
-1. In /home/pi, download WyzeSensePy: wget https://github.com/HclX/WyzeSensePy/archive/master.zip
+1. In /home/pi, download WyzeSensePy: `wget https://github.com/HclX/WyzeSensePy/archive/master.zip`
 1. Unpack: unzip master.zip
 1. Install the required modules: sudo apt install python-setuptools python-builtins python-future python-six python-docopt
 1. Install WyzeSensePy: sudo python setup.py install
