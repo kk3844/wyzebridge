@@ -18,9 +18,9 @@ Setting up your bridge is pretty simple.  Simply plug in the USB device to your 
 
 ## Managing your devices
 
-Unfortunately you must still pair the devices through the console.  This feature may be added in a future date but a lack in good documentation for Hubitat and my inexperience in device handlers makes this limitation a reality!
+Unfortunately you must still pair/unpair the devices through the console.  This feature may be added in a future date but a lack in good documentation for Hubitat and my inexperience in device handlers makes this limitation a reality!
 
-### To add a device:
+### To pair a device:
 1. Ensure the Wyze Telnet Link device has been stopped.  To do this, click the Disconnect Telnet button on the device page.  You should see TelnetSession and WyzeHubUSB turn to Disconnected.
 1. SSH to your Pi and go to the /home/pi/WyzeSensePy-master directory.
 1. Run sample.py: sudo python sample.py (yes, you must use sudo to access the hidraw device)
@@ -29,10 +29,10 @@ Unfortunately you must still pair the devices through the console.  This feature
 1. Add more devices at required.  Once done, press X, then Enter to quit.
 1. Go back to the Wyze Telnet Link device and click the Connect Telnet button and wait for TelnetSession to read Connected.
 1. Once the telnet session is open, click Start Bridge and wait until WyzeHubUSB is Connected.
-1. More steps here -- not documented yet.
+1. Once the first reading comes across, the Wyze Telnet Link driver will create a new child device for you.  You'll find it listed under the Wyze Telnet Link as a child device.
 
-### To delete a device:
-Perform the same steps for adding but choose the option to Unpair a device.  Once unpaired, simply remove the child device from Hubitat.  They system will no longer see the device address and try to read the values.
+### To unpair a device:
+Perform the same steps for pairing but choose the option to Unpair a device.  Once unpaired, simply remove the child device from Hubitat.  They system will no longer see the device address and try to read the values.
 
 ## Credits
 A big thanks goes out to HclX for the [WyzeSensePy](https://github.com/HclX/WyzeSensePy) project.  Without it, the Hubitat driver probably wouldn't have been possible!  Okay, maybe it would have, but it sure made it easier!
