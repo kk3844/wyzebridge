@@ -5,12 +5,12 @@
 1. Install Raspbian and make any required setup changes.  This was developed on an original Model B running Raspbian Buster.
 1. Set your PI up with a static IP!  You can use a host name if you'd like, but sticking to IP will keep communications near instant.
 1. In /home/pi, download WyzeSensePy: `wget https://github.com/HclX/WyzeSensePy/archive/master.zip`
-1. Unpack: unzip master.zip
-1. Install the required modules: sudo apt install python-setuptools python-builtins python-future python-six python-docopt
-1. Install WyzeSensePy: sudo python setup.py install
-1. Install telnetd: sudo apt install telnetd
-1. Enable telnetd at boot: sudo systemctl enable openbsd-inetd
-1. Copy hubitat.py to /home/pi/WyzeSensePy-master.  This is the default location of WyzeSensePy and due to application dependencies, I am only able to get it to run from this location.  This is essentially a slimmed down version of sample.py that only outputs the sensor data.  It is what the Wyze Telnet Link watches for sensor readings.
+1. Unpack: `unzip master.zip`
+1. Install the required modules: `sudo apt install python-setuptools python-builtins python-future python-six python-docopt`
+1. Install WyzeSensePy: `sudo python setup.py install`
+1. Install telnetd: `sudo apt install telnetd`
+1. Enable telnetd at boot: `sudo systemctl enable openbsd-inetd`
+1. Copy `hubitat.py` to `/home/pi/WyzeSensePy-master`.  This is the default location of WyzeSensePy and due to application dependencies, I am only able to get it to run from this location.  This is essentially a slimmed down version of sample.py that only outputs the sensor data.  It is what the Wyze Telnet Link watches for sensor readings.
 
 ## Setting up the bridge
 
