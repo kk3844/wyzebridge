@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 
-"""Example of using WyzeSense USB bridge.
+"""Hubitat linking script for WyzeSense USB bridge.
 
 **Usage:** ::
-  sample.py [options]
+  hubitat.py [options]
 
 **Options:**
 
@@ -13,7 +13,7 @@
 
 **Examples:** ::
 
-  sample.py --device /dev/hidraw0   # Using WyzeSense USB bridge /dev/hidraw0
+  hubitat.py --device /dev/hidraw0   # Using WyzeSense USB bridge /dev/hidraw0
 
 """
 from __future__ import print_function
