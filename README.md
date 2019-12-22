@@ -34,4 +34,5 @@ Unfortunately you must still pair the devices through the console.  This feature
 ### To delete a device:
 Perform the same steps for adding but choose the option to Unpair a device.  Once unpaired, simply remove the child device from Hubitat.  They system will no longer see the device address and try to read the values.
 
-
+## Credits
+A big thanks goes out to HclX for the [WyzeSensePy](https://github.com/HclX/WyzeSensePy) project.  Without it, the Hubitat driver probably wouldn't have been possible!  Okay, maybe it would have, but it sure made it easier!
