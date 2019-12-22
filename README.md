@@ -11,6 +11,21 @@
 1. Install telnetd: `sudo apt install telnetd`
 1. Enable telnetd at boot: `sudo systemctl enable openbsd-inetd`
 1. Copy `hubitat.py` to `/home/pi/WyzeSensePy-master`.  This is the default location of WyzeSensePy and due to application dependencies, I am only able to get it to run from this location.  This is essentially a slimmed down version of sample.py that only outputs the sensor data.  It is what the Wyze Telnet Link watches for sensor readings.
+1. Go to Hubitat and create a new Wyze Telnet Link device.  You can call it whatever you'd like, for the sake of this demo I'll keep the default name.
+1. Enter in the following information:
+	1. IP address - this is the IP address of your Raspberry Pi
+	1. Telnet Port - leave this at the default of 23 unless you've changed it
+	1. Telnet Username - this is the username of the user that runs WyzeSensePy, by default it is 'pi'
+	1. Telnet Password - this is the password of the user that runs WyzeSensePy
+	1. Path to hubitat.py - set this to `/home/pi/WyzeSensePy-master` unless you've modified the code.
+1. Click Save Preferences.
+
+## Connecting the WyzeSense USB Hub
+
+1. Start a telnet session by clicking Connect Telnet and wait until TelnetSession is `Connected` on the right.
+1. Next, click the Start Bridge button.  Wait until WyzeHubUSB is `Connected` on the right.  
+
+Sometimes the Start Bridge portion gives weird errors -- simply try it again.  I've yet to figure out why Python fails to start the application once in a while.  You'll see the hub serial, mac, etc in the logs if all is well.
 
 ## Setting up the bridge
 
@@ -32,7 +47,7 @@ Unfortunately you must still pair/unpair the devices through the console.  This 
 1. Once the first reading comes across, the Wyze Telnet Link driver will create a new child device for you.  You'll find it listed under the Wyze Telnet Link as a child device.
 
 ### To unpair a device:
-Perform the same steps for pairing but choose the option to Unpair a device.  Once unpaired, simply remove the child device from Hubitat.  They system will no longer see the device address and try to read the values.
+Perform the same steps for pairing but choose the option to Unpair a device.  When you unpair, you'll enter the device address with it (such as `U 77787F77`) and it will be removed.  Once unpaired, simply remove the child device from Hubitat.  They system will no longer see the device address and try to read the values.
 
 ## Credits
 A big thanks goes out to HclX for the [WyzeSensePy](https://github.com/HclX/WyzeSensePy) project.  Without it, the Hubitat driver probably wouldn't have been possible!  Okay, maybe it would have, but it sure made it easier!
