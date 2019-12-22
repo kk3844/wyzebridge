@@ -109,14 +109,17 @@ def parse(String msg) {
             sensorBattery = sensorBatteryArray[1];
             sensorSignal = sensorSignalArray[1];
 
-            // Create child device the first time
-            // This needs work!
-            //createChildDevice(msgAddress,sensorType);
-            
             log.debug "Sensor (" + msgAddress + "): " + msgDate + " - Type: " + sensorType + ", State: " + sensorState + ", Battery: " + sensorBattery + ", Signal: " + sensorSignal;
         
             // Update child device
             def childDevice = getChildDevice(msgAddress);
+            
+            // Check if child device exists, if not, create it
+            if (childDevice == null) {
+                log.debug "Child device for " + msgAddress + " doesn't exist -- creating."
+                createChildDevice(msgAddress, sensorType);
+                childDevice = getChildDevice(msgAddress);
+            }
             childDevice.sendEvent(name: "battery",value: sensorBattery);
             childDevice.sendEvent(name: "signal", value: sensorSignal);
             if (sensorType == "motion") {
@@ -127,7 +130,7 @@ def parse(String msg) {
                     sensorState == "closed";
                 }
                 childDevice.sendEvent(name: "contact", value: sensorState);
-            }
+            }    
         }
     }
 }
