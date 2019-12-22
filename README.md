@@ -1,5 +1,7 @@
 # Wyze Bridge
 
+Hubitat Community Post: https://community.hubitat.com/t/release-alpha-wyzesense-integration/30009
+
 ## Setting up your Pi
 
 1. Install Raspbian and make any required setup changes.  This was developed on an original Model B running Raspbian Buster.
