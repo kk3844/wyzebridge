@@ -9,7 +9,7 @@ Hubitat Community Post: https://community.hubitat.com/t/release-alpha-wyzesense-
 1. In /home/pi, download WyzeSensePy: `wget https://github.com/HclX/WyzeSensePy/archive/master.zip`
 1. Unpack: `unzip master.zip`
 1. Install the required modules: `sudo apt install python-setuptools python-future python-six python-docopt`
-1. Install WyzeSensePy: `sudo python setup.py install`
+1. Install WyzeSensePy: `cd /home/pi/WyzeSensePy-master` and then `sudo python setup.py install`
 1. Install telnetd: `sudo apt install telnetd`
 1. Enable telnetd at boot: `sudo systemctl enable openbsd-inetd`
 1. Copy `hubitat.py` to `/home/pi/WyzeSensePy-master`.  This is the default location of WyzeSensePy and due to application dependencies, I am only able to get it to run from this location.  This is essentially a slimmed down version of sample.py that only outputs the sensor data.  It is what the Wyze Telnet Link watches for sensor readings.
