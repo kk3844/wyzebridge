@@ -13,6 +13,7 @@ Hubitat Community Post: https://community.hubitat.com/t/release-alpha-wyzesense-
 1. Install telnetd: `sudo apt install telnetd`
 1. Enable telnetd at boot: `sudo systemctl enable openbsd-inetd`
 1. Copy `hubitat.py` to `/home/pi/WyzeSensePy-master`.  This is the default location of WyzeSensePy and due to application dependencies, I am only able to get it to run from this location.  This is essentially a slimmed down version of sample.py that only outputs the sensor data.  It is what the Wyze Telnet Link watches for sensor readings.
+1. Ensure that hubitat.py is executable: `chmod +x /home/pi/WyzeSensePy-master/hubitat.py`
 1. Go to Hubitat and create a new Wyze Telnet Link device.  You can call it whatever you'd like, for the sake of this demo I'll keep the default name.
 1. Enter in the following information:
 	1. IP address - this is the IP address of your Raspberry Pi
