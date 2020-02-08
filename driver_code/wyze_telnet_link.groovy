@@ -64,6 +64,8 @@ def telnetStatus(String status) {
 def parse(String msg) {
     
     //log.debug "Telnet Response = ${msg}"
+    // NOTE: If you choose to use a different Linux distribution or 'roll your own' installation
+    // instead of using a Pi, you amy need to change this based on the login message of your machine.
     if (msg == "permitted by applicable law.") {
         sendEvent(name: "TelnetSession", value: "Connected"); 
         log.debug "Telnet session opened!";
@@ -109,6 +111,11 @@ def parse(String msg) {
             sensorBattery = sensorBatteryArray[1];
             sensorSignal = sensorSignalArray[1];
 
+            if (sensorType == "switch") {
+                if (sensorState == "close") {
+                    sensorState == "closed";
+                }
+            }
             log.debug "Sensor (" + msgAddress + "): " + msgDate + " - Type: " + sensorType + ", State: " + sensorState + ", Battery: " + sensorBattery + ", Signal: " + sensorSignal;
         
             // Update child device
@@ -126,9 +133,6 @@ def parse(String msg) {
                 childDevice.sendEvent(name: "motion", value: sensorState);
             }
             if (sensorType == "switch") {
-                if (sensorState == "close") {
-                    sensorState == "closed";
-                }
                 childDevice.sendEvent(name: "contact", value: sensorState);
             }    
         }
