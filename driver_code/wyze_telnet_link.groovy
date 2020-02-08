@@ -113,7 +113,7 @@ def parse(String msg) {
 
             if (sensorType == "switch") {
                 if (sensorState == "close") {
-                    sensorState == "closed";
+                    sensorState = "closed";
                 }
             }
             log.debug "Sensor (" + msgAddress + "): " + msgDate + " - Type: " + sensorType + ", State: " + sensorState + ", Battery: " + sensorBattery + ", Signal: " + sensorSignal;
